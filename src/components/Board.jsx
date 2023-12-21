@@ -3,16 +3,22 @@ import Square from "./Square";
 
 const Board = () => {
   const [state, setState] = useState(Array(9).fill(null));
+  const [isXNext, setIsXNext] = useState(false);
 
   const handleClick = (clickPosition) => {
+    if (state[clickPosition]) {
+      return;
+    }
+
     setState((currentClickPosition) => {
       return currentClickPosition.map((squareVal, position) => {
         if (clickPosition === position) {
-          return "X";
+          return isXNext ? "X" : "0";
         }
         return squareVal;
       });
     });
+    setIsXNext((currvValue) => !currvValue);
   };
 
   const renderSquare = (position) => {
