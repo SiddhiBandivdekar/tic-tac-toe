@@ -1,29 +1,10 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import Square from "./Square";
 
-const Board = () => {
-  const [state, setState] = useState(Array(9).fill(null));
-  const [isXNext, setIsXNext] = useState(false);
-
-  const handleClick = (clickPosition) => {
-    if (state[clickPosition]) {
-      return;
-    }
-
-    setState((currentClickPosition) => {
-      return currentClickPosition.map((squareVal, position) => {
-        if (clickPosition === position) {
-          return isXNext ? "X" : "0";
-        }
-        return squareVal;
-      });
-    });
-    setIsXNext((currvValue) => !currvValue);
-  };
-
+const Board = ({ handleClick, squares }) => {
   const renderSquare = (position) => {
     return (
-      <Square value={state[position]} onClick={() => handleClick(position)} />
+      <Square value={squares[position]} onClick={() => handleClick(position)} />
     );
   };
 
