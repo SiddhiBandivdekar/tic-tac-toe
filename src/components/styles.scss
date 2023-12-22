@@ -1,10 +1,10 @@
 $green: #12e177;
 $orange: #ffc72a;
-$brown: #4c4333;
+$blue: #5c6e74;
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: $brown;
+  background-color: $blue;
   color: #fff;
   padding: 0;
   margin: 0;
@@ -83,7 +83,7 @@ button {
   padding: 12px 18px;
   margin-top: 25px;
   transition: all 0.2s;
-  background-color: $brown;
+  background-color: $blue;
   box-shadow: 0px 0px 0px 1px $orange;
   &.active {
     background-color: $orange;
@@ -95,15 +95,15 @@ button {
   .board-row {
     display: flex;
     flex-direction: row;
-    border-bottom: 2px solid #fff;
+    border-bottom: 4px solid #fff;
     &:last-child {
       border-bottom: none;
     }
     .square {
-      width: 80px;
-      height: 80px;
-      border-right: 2px solid #fff;
-      font-size: 2.5rem;
+      width: 100px;
+      height: 100px;
+      border-right: 4px solid #fff;
+      font-size: 4.5rem;
       padding: 0;
       overflow: hidden;
       transition: all 0.2s;
