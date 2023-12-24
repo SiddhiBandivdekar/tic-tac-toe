@@ -1,10 +1,15 @@
 /* eslint-disable react/prop-types */
 import Square from "./Square";
 
-const Board = ({ handleClick, squares }) => {
+const Board = ({ handleClick, squares, winningSquare }) => {
   const renderSquare = (position) => {
+    const isWinningSquare = winningSquare.includes(position);
     return (
-      <Square value={squares[position]} onClick={() => handleClick(position)} />
+      <Square
+        value={squares[position]}
+        onClick={() => handleClick(position)}
+        isWinningSquare={isWinningSquare}
+      />
     );
   };
 

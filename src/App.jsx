@@ -12,7 +12,7 @@ const App = () => {
   const [currMove, setCurrMove] = useState(0);
 
   const game = history[currMove];
-  const winner = calculatedWinner(game.squares);
+  const { winner, winningSquare } = calculatedWinner(game.squares);
 
   const handleClick = (clickPosition) => {
     if (game.squares[clickPosition] || winner) {
@@ -60,7 +60,11 @@ const App = () => {
       <h2>
         <StatusMessage winner={winner} game={game} />
       </h2>
-      <Board handleClick={handleClick} squares={game.squares} />
+      <Board
+        handleClick={handleClick}
+        squares={game.squares}
+        winningSquare={winningSquare}
+      />
       <button
         type="button"
         onClick={newGameHandler}
