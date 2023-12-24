@@ -5,10 +5,10 @@ import { calculatedWinner } from "./components/winner";
 import StatusMessage from "./components/StatusMessage";
 import History from "./components/History";
 
+const NEW_GAME = [{ squares: Array(9).fill(null), isXNext: false }];
+
 const App = () => {
-  const [history, setHistory] = useState([
-    { squares: Array(9).fill(null), isXNext: false },
-  ]);
+  const [history, setHistory] = useState(NEW_GAME);
   const [currMove, setCurrMove] = useState(0);
 
   const game = history[currMove];
